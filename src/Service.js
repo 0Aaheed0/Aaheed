@@ -59,29 +59,31 @@ const Service = () => {
         <div className="time-container">
           <h2>{date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</h2>
           <div className="time-slots">
-            <button onClick={() => setTime('9:00 AM')}>9:00 AM</button>
-            <button onClick={() => setTime('9:30 AM')}>9:30 AM</button>
-            <button onClick={() => setTime('10:00 AM')}>10:00 AM</button>
-            <button onClick={() => setTime('10:30 AM')}>10:30 AM</button>
-            <button onClick={() => setTime('11:00 AM')}>11:00 AM</button>
-            <button onClick={() => setTime('11:30 AM')}>11:30 AM</button>
-            <button onClick={() => setTime('1:00 PM')}>1:00 PM</button>
-            <button onClick={() => setTime('1:30 PM')}>1:30 PM</button>
-            <button onClick={() => setTime('2:00 PM')}>2:00 PM</button>
-            <button onClick={() => setTime('2:30 PM')}>2:30 PM</button>
-            <button onClick={() => setTime('3:00 PM')}>3:00 PM</button>
-            <button onClick={() => setTime('3:30 PM')}>3:30 PM</button>
-            <button onClick={() => setTime('4:00 PM')}>4:00 PM</button>
-            <button onClick={() => setTime('4:30 PM')}>4:30 PM</button>
-            <button onClick={() => setTime('5:00 PM')}>5:00 PM</button>
-            <button onClick={() => setTime('5:30 PM')}>5:30 PM</button>
-            <button onClick={() => setTime('6:00 PM')}>6:00 PM</button>
-            <button onClick={() => setTime('6:30 PM')}>6:30 PM</button>
+            <button className={time === '9:00 AM' ? 'selected' : ''} onClick={() => setTime('9:00 AM')}>9:00 AM</button>
+            <button className={time === '9:30 AM' ? 'selected' : ''} onClick={() => setTime('9:30 AM')}>9:30 AM</button>
+            <button className={time === '10:00 AM' ? 'selected' : ''} onClick={() => setTime('10:00 AM')}>10:00 AM</button>
+            <button className={time === '10:30 AM' ? 'selected' : ''} onClick={() => setTime('10:30 AM')}>10:30 AM</button>
+            <button className={time === '11:00 AM' ? 'selected' : ''} onClick={() => setTime('11:00 AM')}>11:00 AM</button>
+            <button className={time === '11:30 AM' ? 'selected' : ''} onClick={() => setTime('11:30 AM')}>11:30 AM</button>
+            <button className={time === '1:00 PM' ? 'selected' : ''} onClick={() => setTime('1:00 PM')}>1:00 PM</button>
+            <button className={time === '1:30 PM' ? 'selected' : ''} onClick={() => setTime('1:30 PM')}>1:30 PM</button>
+            <button className={time === '2:00 PM' ? 'selected' : ''} onClick={() => setTime('2:00 PM')}>2:00 PM</button>
+            <button className={time === '2:30 PM' ? 'selected' : ''} onClick={() => setTime('2:30 PM')}>2:30 PM</button>
+            <button className={time === '3:00 PM' ? 'selected' : ''} onClick={() => setTime('3:00 PM')}>3:00 PM</button>
+            <button className={time === '3:30 PM' ? 'selected' : ''} onClick={() => setTime('3:30 PM')}>3:30 PM</button>
+            <button className={time === '4:00 PM' ? 'selected' : ''} onClick={() => setTime('4:00 PM')}>4:00 PM</button>
+            <button className={time === '4:30 PM' ? 'selected' : ''} onClick={() => setTime('4:30 PM')}>4:30 PM</button>
+            <button className={time === '5:00 PM' ? 'selected' : ''} onClick={() => setTime('5:00 PM')}>5:00 PM</button>
+            <button className={time === '5:30 PM' ? 'selected' : ''} onClick={() => setTime('5:30 PM')}>5:30 PM</button>
+            <button className={time === '6:00 PM' ? 'selected' : ''} onClick={() => setTime('6:00 PM')}>6:00 PM</button>
+            <button className={time === '6:30 PM' ? 'selected' : ''} onClick={() => setTime('6:30 PM')}>6:30 PM</button>
           </div>
         </div>
-        <button className={`confirm-booking ${isBookingEnabled ? 'enabled' : ''}`} disabled={!isBookingEnabled}>
-          Confirm Booking
-        </button>
+        <div className="confirm-button-container">
+          <button className={`confirm-booking ${isBookingEnabled ? 'enabled' : ''}`} disabled={!isBookingEnabled}>
+            Confirm Booking
+          </button>
+        </div>
       </div>
     </div>
   );
