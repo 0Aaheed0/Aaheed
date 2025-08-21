@@ -1,14 +1,33 @@
 import React, { useState } from 'react';
 import './Doctors.css';
 
+const MaleIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-gender-male" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M10 14m-5 0a5 5 0 1 0 10 0a5 5 0 1 0 -10 0"></path>
+   <path d="M19 5l-5 5"></path>
+   <path d="M19 5h-5"></path>
+   <path d="M19 5v5"></path>
+</svg>
+);
+
+const FemaleIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-gender-female" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 9m-5 0a5 5 0 1 0 10 0a5 5 0 1 0 -10 0"></path>
+   <path d="M12 14v7"></path>
+   <path d="M9 18h6"></path>
+</svg>
+);
+
 const doctorsData = [
   {
     id: 1,
-    name: 'Dr. John Smith',
-    email: 'john.smith@example.com',
-    phone: '123-456-7890',
-    image: 'https://via.placeholder.com/150',
-    age: 45,
+    name: 'Dr. Aaheed Bin Ashraf',
+    email: 'aaheed@gmail.com',
+    phone: '017-1111-1111',
+    image: 'male',
+    age: 46,
     education: 'MD, Harvard Medical School',
     hometown: 'Boston, MA',
     gender: 'Male',
@@ -17,10 +36,10 @@ const doctorsData = [
   },
   {
     id: 2,
-    name: 'Dr. Jane Doe',
-    email: 'jane.doe@example.com',
-    phone: '123-456-7891',
-    image: 'https://via.placeholder.com/150',
+    name: 'Dr. Anika Rahman',
+    email: 'anika@gmail.com',
+    phone: '017-2222-2222',
+    image: 'female',
     age: 38,
     education: 'MD, Stanford University',
     hometown: 'Palo Alto, CA',
@@ -30,10 +49,10 @@ const doctorsData = [
   },
   {
     id: 3,
-    name: 'Dr. Peter Jones',
-    email: 'peter.jones@example.com',
-    phone: '123-456-7892',
-    image: 'https://via.placeholder.com/150',
+    name: 'Dr. Yousha Shahid',
+    email: 'yousha@gmail.com',
+    phone: '017-3333-3333',
+    image: 'male',
     age: 50,
     education: 'MD, Yale University',
     hometown: 'New Haven, CT',
@@ -43,10 +62,10 @@ const doctorsData = [
   },
   {
     id: 4,
-    name: 'Dr. Mary Williams',
-    email: 'mary.williams@example.com',
-    phone: '123-456-7893',
-    image: 'https://via.placeholder.com/150',
+    name: 'Dr. Nusrat Jahan Tuli',
+    email: 'nusrat@gmail.com',
+    phone: '017-4444-4444',
+    image: 'female',
     age: 32,
     education: 'MD, Columbia University',
     hometown: 'New York, NY',
@@ -56,10 +75,10 @@ const doctorsData = [
   },
   {
     id: 5,
-    name: 'Dr. David Brown',
-    email: 'david.brown@example.com',
-    phone: '123-456-7894',
-    image: 'https://via.placeholder.com/150',
+    name: 'Dr. Golam Rabbani Miraz',
+    email: 'miraz@gmail.com',
+    phone: '017-5555-5555',
+    image: 'male',
     age: 55,
     education: 'MD, University of Pennsylvania',
     hometown: 'Philadelphia, PA',
@@ -69,10 +88,10 @@ const doctorsData = [
   },
   {
     id: 6,
-    name: 'Dr. Susan Davis',
-    email: 'susan.davis@example.com',
-    phone: '123-456-7895',
-    image: 'https://via.placeholder.com/150',
+    name: 'Dr. Gwen Stacy',
+    email: 'gwen@gmail.com',
+    phone: '017-6666-6666',
+    image: 'female',
     age: 40,
     education: 'MD, Duke University',
     hometown: 'Durham, NC',
@@ -82,10 +101,10 @@ const doctorsData = [
   },
   {
     id: 7,
-    name: 'Dr. Michael Miller',
-    email: 'michael.miller@example.com',
-    phone: '123-456-7896',
-    image: 'https://via.placeholder.com/150',
+    name: 'Dr. Levi Ackerman',
+    email: 'levi@gmail.com',
+    phone: '017-7777-7777',
+    image: 'male',
     age: 48,
     education: 'MD, University of Chicago',
     hometown: 'Chicago, IL',
@@ -95,10 +114,10 @@ const doctorsData = [
   },
   {
     id: 8,
-    name: 'Dr. Linda Wilson',
-    email: 'linda.wilson@example.com',
-    phone: '123-456-7897',
-    image: 'https://via.placeholder.com/150',
+    name: 'Dr. Makima',
+    email: 'makima@gmail.com',
+    phone: '017-8888-8888',
+    image: 'female',
     age: 35,
     education: 'MD, Northwestern University',
     hometown: 'Evanston, IL',
@@ -108,10 +127,10 @@ const doctorsData = [
   },
   {
     id: 9,
-    name: 'Dr. Robert Moore',
-    email: 'robert.moore@example.com',
+    name: 'Dr. Taro Sakamoto',
+    email: 'taro@gmail.com',
     phone: '123-456-7898',
-    image: 'https://via.placeholder.com/150',
+    image: 'male',
     age: 52,
     education: 'MD, UCLA',
     hometown: 'Los Angeles, CA',
@@ -121,10 +140,10 @@ const doctorsData = [
   },
   {
     id: 10,
-    name: 'Dr. Patricia Taylor',
-    email: 'patricia.taylor@example.com',
+    name: 'Dr. Kaori Miyazono',
+    email: 'kaori@gmail.com',
     phone: '123-456-7899',
-    image: 'https://via.placeholder.com/150',
+    image: 'female',
     age: 42,
     education: 'MD, UC Berkeley',
     hometown: 'Berkeley, CA',
@@ -176,7 +195,7 @@ const Doctors = () => {
       <div className="doctor-list">
         {currentDoctors.map(doctor => (
           <div key={doctor.id} className="doctor-card" onClick={() => handleDoctorClick(doctor)}>
-            <img src={doctor.image} alt={doctor.name} />
+            {doctor.gender === 'Male' ? <MaleIcon /> : <FemaleIcon />}
             <h2>{doctor.name}</h2>
             <p>{doctor.email}</p>
             <p>{doctor.phone}</p>
@@ -194,7 +213,7 @@ const Doctors = () => {
       {showSidebar && selectedDoctor && (
         <div className="doctor-details-sidebar">
           <button className="close-sidebar" onClick={handleCloseSidebar}>X</button>
-          <img src={selectedDoctor.image} alt={selectedDoctor.name} />
+          <img src={`https://ui-avatars.com/api/?name=${selectedDoctor.name}&background=random&size=150`} alt={selectedDoctor.name} />
           <h3>{selectedDoctor.name}</h3>
           <p>Email: {selectedDoctor.email}</p>
           <p>Phone: {selectedDoctor.phone}</p>
@@ -211,3 +230,6 @@ const Doctors = () => {
 };
 
 export default Doctors;
+
+
+

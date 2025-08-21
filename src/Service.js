@@ -96,7 +96,10 @@ const Service = () => {
               <option value="Dr-Yousha Shahid">Dr-Yousha Shahid</option>
               <option value="Dr-Golam Rabbani Miraz">Dr-Golam Rabbani Miraz</option>
               <option value="Dr-Nusrat Jahan Tuli">Dr-Nusrat Jahan Tuli</option>
-              <option value="Dr-Steve Rogers">Dr-Steve Rogers</option>
+              <option value="Dr-Levi Ackerman">Dr-Levi Ackerman</option>
+              <option value="Dr-Makima">Dr-Makima</option>
+              <option value="Dr-Taro Sakamoto">Dr-Taro Sakamoto</option>
+              <option value="Dr-Kaori Miyazono">Dr-Kaori Miyazono</option>
             </select>
           </div>
         </div>
