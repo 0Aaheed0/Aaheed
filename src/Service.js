@@ -100,6 +100,7 @@ const Service = () => {
               <option value="Dr-Makima">Dr-Makima</option>
               <option value="Dr-Taro Sakamoto">Dr-Taro Sakamoto</option>
               <option value="Dr-Kaori Miyazono">Dr-Kaori Miyazono</option>
+              <option value="Dr-Eren Eager">Dr-Eren Eager</option>
             </select>
           </div>
         </div>
