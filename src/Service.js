@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './Service.css';
+import { Link } from 'react-router-dom';
 
 const HomeIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -67,7 +68,7 @@ const Service = () => {
         <div className="logo">Smile Studio</div>
         <button><HomeIcon />Home</button>
         <button className="active"><ServiceIcon />Service</button>
-        <button><DoctorIcon />Doctors</button>
+        <Link to="/doctors"><button><DoctorIcon />Doctors</button></Link>
         <button><ReviewsIcon />Reviews</button>
         <button><ContactIcon />Contact</button>
       </div>
