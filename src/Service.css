@@ -18,7 +18,9 @@
 }
 
 .left-panel button {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -59,6 +61,7 @@
 
 .dropdown label {
   width: 80px;
+  color: #00008B;
 }
 
 .dropdown select {
@@ -68,6 +71,9 @@
 
 .calendar-container {
   margin: 20px auto 0;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .react-calendar {
